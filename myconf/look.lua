@@ -22,8 +22,8 @@ hl.config({
     },
 
     decoration = {
-        rounding       = 0,
-        rounding_power = 4,
+        rounding       = 5,
+        rounding_power = 2,
 
         -- Change transparency of focused and unfocused windows
         active_opacity   = 1.0,
@@ -44,7 +44,7 @@ hl.config({
         },
 
 	glow = {
-		enabled = true,
+		enabled = false,
 		range = 8,
 	},
     },
@@ -67,11 +67,13 @@ hl.curve("switch",         { type = "bezier", points = { {0.5, 0},  {0.4, 0.75} 
 hl.curve("easy",           { type = "spring", mass = 1, stiffness = 71.2633, dampening = 15.8273644 })
 hl.curve("rubber",         { type = "spring", mass = 1, stiffness = 40, dampening = 10 })
 hl.curve("bouncy",         { type = "spring", mass = 1, stiffness = 30, dampening = 7  })
+hl.curve("stiff",          { type = "spring", mass = 1, stiffness = 70, dampening = 10 })
+hl.curve("idk",               { type = "spring", mass = 1, stiffness = 100, dampening = 20 })
 
 hl.animation({ leaf = "global",        enabled = true,  speed = 10,   bezier = "default" })
 hl.animation({ leaf = "border",        enabled = true,  speed = 5.39, bezier = "easeOutQuint" })
-hl.animation({ leaf = "windows",       enabled = true,  speed = 4.79, spring = "bouncy" })
-hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 2.1,  spring = "rubber",                style = "popin 80%" })
+hl.animation({ leaf = "windows",       enabled = true,  speed = 1, spring = "idk" })
+hl.animation({ leaf = "windowsIn",     enabled = true,  speed = 2.1,  spring = "easy",                style = "" })
 hl.animation({ leaf = "windowsOut",    enabled = true,  speed = 1.49, bezier = "almostLinear",          style = "popin 80%" })
 hl.animation({ leaf = "fadeIn",        enabled = true,  speed = 1.5, bezier = "switch" })
 hl.animation({ leaf = "fadeOut",       enabled = true,  speed = 1.5, bezier = "switch" })
