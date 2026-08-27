@@ -51,6 +51,9 @@ hl.bind(mainMod .. " + CTRL + down",  hl.dsp.exec_cmd("python3 ~/scripts/resize_
 -- Screenshot with mainMod + shift + s
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("grim -g \"$(slurp -d)\" - | wl-copy"), { locked = true })
 
+-- Run hyprlauncher with mainMod + F
+hl.bind(mainMod .. " + F", hl.dsp.exec_cmd("hyprlauncher"))
+
 -- Switch workspaces with mainMod + [0-9]
 -- Move active window to a workspace with mainMod + SHIFT + [0-9]
 for i = 1, 10 do

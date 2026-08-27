@@ -7,7 +7,7 @@ require("hyprapps")
 --
 hl.on("hyprland.start", function ()
    --hl.exec_cmd("/home/alexw/projects/wallpaper-watcher/main") -- Launch hyprpaper to manage wallpapers
-   --hl.exec_cmd("hypridle")
+   hl.exec_cmd("hypridle")
    hl.exec_cmd("swaync")
    hl.exec_cmd("librewolf")
    hl.exec_cmd("discord")
